@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Genius!</title>
+    
+    <!-- CSS and tailwind file -->
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <!-- header section -->
+    <header>
+        <div class="grid grid-cols-2 gap-4 bg-slate-300	p-4 m-4 rounded-lg">
+            <div>
+                <h3 class="font-bold text-2xl">Interactive</h3>
+                <h1 class="text-slate-500">Geometry Genius</h1>
+            </div>
+            <div class="flex justify-end">
+                <button id="btn" class="bg-sky-600 w-1/6 rounded-lg text-white">Blog</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- main section -->
+    <main>
+        <!-- Geometry calculation section -->
+        <section class="lg:px-1 flex flex-col md:flex-row lg:flex-row gap-2 mt-5">
+            <div class="w-full md:w-[70%] lg:w-[70%]  grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Triangle -->
+                <div id="triangle"
+                    class="max-w-sm rounded overflow-hidden shadow-lg flex flex-col justify-center items-center ml-4 p-4">
+                    <img class="w-auto" src="images/triangle.png" alt="Triangle">
+                    <h3 id="first-name" class="font-bold text-xl m-2 text-center">Triangle</h3>
+                    <p class="text-gray-700 text-center pb-3">
+                        Area (A) = 0.5 X b X h
+                    </p>
+                    <div class="flex flex-row gap-2">
+                        <input id="triangle-base" class="bg-slate-100 w-full p-1" type="text" name="" placeholder="b">
+                        <p>cm</p>
+                        <input id="triangle-height" class="bg-slate-100 w-full p-1" type="text" name="" placeholder="h">
+                        <p>cm</p>
+                    </div>
+                    <button id="triangle-calculate"
+                        class="bg-sky-600 m-4 w-full p-2 rounded-md text-white">Calculate</button>
+                </div>
+
+                <!-- Rectangle -->
+                <div id="rectangle"
+                    class="max-w-sm rounded overflow-hidden shadow-lg flex flex-col justify-center items-center p-4">
+                    <img class="w-auto" src="images/rectangle.png" alt="">
+                    <h3 id="second-name" class="font-bold text-xl m-2 text-center">Rectangle</h3>
+                    <p class="text-gray-700 text-center pb-3">
+                        Area (A) = w X l
+                    </p>
+                    <div class="flex flex-row gap-2 mb-2">
+                        <input id="rectangle-width" class="bg-slate-100 w-full p-1" type="text" name="" placeholder="w">
+                        <p>cm</p>
+                        <input id="rectangle-length" class="bg-slate-100 w-full p-1" type="text" name=""
+                            placeholder="l">
+                        <p>cm</p>
+                    </div>
+                    <button id="rectangle-calculate"
+                        class="bg-sky-600 m-4 w-full p-2 rounded-md text-white">Calculate</button>
+                </div>
+
+                <!-- Parallelogram -->
+                <div id="parallelogram"
+                    class="max-w-sm rounded overflow-hidden shadow-lg flex flex-col justify-center items-center p-4">
+                    <img class="w-auto" src="images/parallelogram.png" alt="Triangle">
+                    <h3 id="third-name" class="font-bold text-xl m-2 text-center">Parallelogram</h3>
+                    <p class="text-gray-700 text-center pb-2">
+                        Area (A) = b X h
+                    </p>
+                    <h3 class="pb-10">b=<span id="parallelogram-b">10</span>cm, h=<span
+                            id="parallelogram-h">12</span>cm</h3>
+                    <button id="parallelogram-calculate"
+                        class="bg-sky-600 m-4 w-full p-2 rounded-md text-white">Calculate</button>
+                </div>
+                <!-- Rhombus -->
+                <div id="rhombus"
+                    class="max-w-sm rounded overflow-hidden shadow-lg flex flex-col justify-center items-center ml-4 p-4">
+                    <img class="w-auto" src="images/rhombus.png" alt="Triangle">
+                    <h3 id="forth-name" class="font-bold text-xl m-2 text-center">Rhombus</h3>
+                    <p class="text-gray-700 text-center pb-3">
+                        Area (A) = 0.5 X d<sub>1</sub> X d<sub>2</sub> 
+                    </p>
+                    <h3 class="pb-10">d<sub>1</sub>=<span id="rhombus-d1">16</span>cm, d<sub>2</sub> =<span id="rhombus-d2">8</span>cm</h3>
+                    <button id="rhombus-calculate"
+                        class="bg-sky-600 m-4 w-full p-2 rounded-md text-white">Calculate</button>
+                </div>
+
+                <!-- Pentagon -->
+                <div id="pentagon"
+                    class="max-w-sm rounded overflow-hidden shadow-lg flex flex-col justify-center items-center p-4">
+                    <img class="w-auto" src="images/pentagon.png" alt="Triangle">
+                    <h3 id="fifth-name" class="font-bold text-xl m-2 text-center">Pentagon</h3>
+                    <p class="text-gray-700 text-center pb-3">
+                        Area (A) = 0.5 X p X b
+                    </p>
+                    <h3 class="pb-10">p=<span id="pentagon-p">6</span>cm, b=<span id="pentagon-b">10</span>cm</h3>
+                    <button id="pentagon-calculate"
+                        class="bg-sky-600 m-4 w-full p-2 rounded-md text-white">Calculate</button>
+                </div>
+
+                <!-- Ellipse -->
+                <div id="ellipse"
+                    class="max-w-sm rounded overflow-hidden shadow-lg flex flex-col justify-center items-center p-4">
+                    <img class="w-auto" src="images/ellipse.png" alt="Triangle">
+                    <h3 id="sixth-name" class="font-bold text-xl m-3 text-center">Ellipse</h3>
+                    <p class="text-gray-700 text-center pb-3">
+                        Area (A) = &pi;ab
+                    </p>
+                    <h3 class="pb-10">a=<span id="ellipse-a">10</span>cm, b=<span id="ellipse-b">4</span>cm</h3>
+                    <button id="ellipse-calculate"
+                        class="bg-sky-600 m-4 w-full p-2 rounded-md text-white">Calculate</button>
+                </div>
+            </div>
+            <!-- Area Calculation -->
+            <div id="container" class="h-100 rounded overflow-hidden shadow-lg flex flex-col items-center
+             pt-4 w-full md:w-[30%] lg:w-[30%] mx-auto">
+                <h3 class="font-semibold text-xl underline underline-offset-4">Area Calculation</h3>
+                <div class="overflow-x-auto">
+                    <table class="table w-full">
+                      <tbody id="table-container">
+                        <!-- <tr>
+                          <th>1</th>
+                          <td>Cy Ganderton</td>
+                          <td>Quality Control Specialist</td>
+                          <td>Blue</td>
+                        </tr> -->
+                      </tbody>
+                    </table>
+                  </div>
+            </div>
+        </section>
+    </main>
+     
+    <!-- javascript file -->
+    <script src="js/common.js"></script>
+    <script src="js/area.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+
+</html>
